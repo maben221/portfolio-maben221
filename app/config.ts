@@ -1,6 +1,6 @@
 export const metaData = {
   baseUrl: "https://nextfolio-template.vercel.app/",
-  title: "Nextfolio",
+  title: "Portfolio de Mohamed Aymane Bencheikh",
   name: "Sirius",
   ogImage: "/opengraph-image.png",
   description:
@@ -8,9 +8,9 @@ export const metaData = {
 };
 
 export const socialLinks = {
-  twitter: "https://x.com/1tssirius",
-  github: "https://github.com/1msirius/Nextfolio",
-  instagram: "https://www.instagram.com/",
-  linkedin: "https://www.linkedin.com/",
-  email: "mailto:example@gmail.com",
+  twitter: "https://x.com/gexo173",
+  github: "https://github.com/maben221",
+  instagram: "https://www.instagram.com/aymane.bencheikh/",
+  linkedin: "https://www.linkedin.com/in/mohamed-aymane-bencheikh-a8b84a182/",
+  email: "mailto:aymanebencheikh1@gmail.com",
 };
