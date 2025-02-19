@@ -37,7 +37,7 @@ export default function Page() {
         <ul>
           <li>
             <strong>IA conversationnelle (En développement)</strong>: Agent conversationnel instantané
-            bâti sur Google Realtime API et DialogFlow CX
+            bâti sur Google Multimodal Live API et DialogFlow CX
             capable de répondre à des questions en matière d'assurance de dommages aux particuliers, réalisé en Python
           </li>
           <li>
