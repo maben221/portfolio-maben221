@@ -8,9 +8,9 @@ export const metaData = {
 };
 
 export const socialLinks = {
-  twitter: "https://x.com/gexo173",
+  twitter: "https://x.com/BencheikhAymane",
   github: "https://github.com/maben221",
   instagram: "https://www.instagram.com/aymane.bencheikh/",
-  linkedin: "https://www.linkedin.com/in/mohamed-aymane-bencheikh-a8b84a182/",
-  email: "mailto:aymanebencheikh1@gmail.com",
+  linkedin: "https://www.linkedin.com/in/maben221/",
+  email: "mailto:aymane@bencheikh.ca",
 };

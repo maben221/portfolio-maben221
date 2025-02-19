@@ -28,7 +28,7 @@ export default function Page() {
         
         <h2>Compétences techniques</h2>
         <ul>
-          <li><strong>Langages :</strong> HTML, Python, C++, JavaScript, CSS</li>
+          <li><strong>Langages :</strong> Python, C++, JavaScript, CSS, HTML</li>
           <li><strong>Outils :</strong> VS Code, Git, Docker</li>
           <li><strong>Langues :</strong> Français (maternel), Anglais (avancé), Espagnol (débutant)</li>
         </ul>
@@ -36,8 +36,12 @@ export default function Page() {
         <h2>Projets récents</h2>
         <ul>
           <li>
-            <strong>Plugin Tampermonkey (2023)</strong>: Extension navigateur pour comparer 
-            les prix des jeux vidéo
+            <strong>IA vocale conversationnelle (En développement)</strong>: Agent conversationnel instantané
+            capable de répondre à des questions en matière d'assurance de dommages aux particuliers
+          </li>
+          <li>
+            <strong>Plugin web (2023)</strong>: Extension de navigateur pour comparer 
+            les prix des jeux vidéo à travers différentes plateformes
           </li>
           <li>
             <strong>Projet de design IoT (2023)</strong>: Conception d'un système de détection 
