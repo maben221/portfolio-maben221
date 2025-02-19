@@ -37,11 +37,12 @@ export default function Page() {
         <ul>
           <li>
             <strong>IA vocale conversationnelle (En développement)</strong>: Agent conversationnel instantané
-            capable de répondre à des questions en matière d'assurance de dommages aux particuliers
+            basé sur Google DialogFlow CX
+            capable de répondre à des questions en matière d'assurance de dommages aux particuliers, réalisé en Python
           </li>
           <li>
             <strong>Plugin web (2023)</strong>: Extension de navigateur pour comparer 
-            les prix des jeux vidéo à travers différentes plateformes
+            les prix des jeux vidéo à travers différentes plateformes, réalisé en JavaScript
           </li>
           <li>
             <strong>Projet de design IoT (2023)</strong>: Conception d'un système de détection 
