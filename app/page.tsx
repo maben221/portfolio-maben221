@@ -52,9 +52,17 @@ export default function Page() {
 
         <h2>Expérience professionnelle</h2>
         <p>
-          Actuellement <strong>Soutien au centre de services TI</strong> chez Beneva, 
-          où je gère l'infrastructure IT, la CMDB et les accès utilisateurs via 
-          Azure Entra ID et Active Directory.
+          Actuellement en stage dans l'équipe <strong>MLOps</strong>, je collabore à l'amélioration des <strong>technologies</strong>, 
+          des <strong>modèles d’intelligence artificielle</strong>, des langages, des logiciels et des outils de développement. 
+          Je veille au bon fonctionnement et à la performance de l’écosystème <strong>MLOps</strong>, et j'assure la mise en œuvre de 
+          l’architecture technologique nécessaire pour les solutions d’<strong>intelligence artificielle</strong>. 
+          Ce stage me permet de développer des compétences avec <strong>Terraform</strong>, <strong>Anaconda Entreprise</strong>, 
+          <strong>AWS Sagemaker</strong>, <strong>MLFlow</strong> et <strong>Python/R/SQL</strong>.
+        </p>
+        <p>
+          Auparavant, j'étais <strong>Soutien au centre de services TI</strong> chez Beneva, 
+          où je gérais l'<strong>infrastructure IT</strong>, la <strong>CMDB</strong> et les <strong>accès utilisateurs</strong> via 
+          <strong>Azure Entra ID</strong> et <strong>Active Directory</strong>.
         </p>
 
         <p>
