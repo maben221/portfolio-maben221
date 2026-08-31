@@ -1,7 +1,146 @@
+"use client";
+
 import Image from "next/image";
-import { socialLinks } from "./config";
+import { socialLinks, resumeUrl } from "./config";
+import { useI18n } from "./lib/i18n";
 
 export default function Page() {
+  const { t, locale } = useI18n();
+
+  const isFr = locale === "fr";
+
+  const skills = {
+    languages: "Python, C++, JavaScript, CSS, HTML",
+    tools: "VS Code, Git, Docker, Terraform, AWS SageMaker, MLFlow",
+    spoken: isFr
+      ? "Français (maternel), Anglais (avancé), Arabe (intermédiaire), Espagnol (débutant)"
+      : "French (native), English (advanced), Arabic (intermediate), Spanish (beginner)",
+  };
+
+  const projects = isFr
+    ? [
+        {
+          name: "Agent IA conversationnel (en cours)",
+          desc: "Agent conversationnel bâti sur Google Multimodal Live API et DialogFlow CX, capable de répondre à des questions d'assurance de dommages aux particuliers. Réalisé en Python.",
+        },
+        {
+          name: "Plugin web (2023)",
+          desc: "Extension de navigateur pour comparer les prix des jeux vidéo à travers différentes plateformes. Réalisée en JavaScript.",
+        },
+        {
+          name: "Projet de design IoT (2023)",
+          desc: "Conception d'un système de détection de lemmings soutenu par une solution IdO. Note finale : 92 %.",
+        },
+      ]
+    : [
+        {
+          name: "Conversational AI agent (in progress)",
+          desc: "Conversational agent built on Google Multimodal Live API and DialogFlow CX, able to answer personal property & casualty insurance questions. Built in Python.",
+        },
+        {
+          name: "Web plugin (2023)",
+          desc: "Browser extension to compare video game prices across platforms. Built in JavaScript.",
+        },
+        {
+          name: "IoT design project (2023)",
+          desc: "Design of a lemming-detection system supported by an IoT solution. Final grade: 92%.",
+        },
+      ];
+
+  const experience = isFr
+    ? [
+        {
+          role: "Analyste développeur MLOps (stagiaire)",
+          company: "Beneva",
+          bullets: [
+            "Collaboration aux projets d'amélioration des technologies, des modèles d'IA et des outils de développement",
+            "Soutien à la performance des logiciels utilisés par l'équipe et à l'évolution de l'écosystème MLOps",
+            "Mise en œuvre de l'architecture technologique pour opérationnaliser les solutions d'IA",
+            "Utilisation de Terraform, Anaconda Entreprise, AWS SageMaker et MLFlow",
+          ],
+        },
+        {
+          role: "Analyste technologique (étudiant)",
+          company: "Beneva",
+          bullets: [
+            "Coordination entre les équipes de développement et les partenaires d'affaires",
+            "Documentation des processus d'architecture et des guides de configuration",
+            "Identification des risques techniques et veille technologique",
+          ],
+        },
+        {
+          role: "Soutien au centre de services TI",
+          company: "Beneva",
+          bullets: [
+            "Installation et entretien des logiciels sur les postes de travail",
+            "Gestion des identités et accès (Azure Entra ID, SCCM, Active Directory)",
+            "Maintien à jour de la CMDB (Jira) et prises d'inventaire",
+          ],
+        },
+        {
+          role: "Agent de bureau",
+          company: "Beneva",
+          bullets: [
+            "Aide aux clients pour la facturation de leurs polices d'assurance",
+            "Obtention du titre d'agent en assurances de dommages des particuliers",
+          ],
+        },
+        {
+          role: "Téléphoniste",
+          company: "Statistiques Canada",
+          bullets: [
+            "Aide aux citoyens canadiens pour remplir leur formulaire de recensement",
+            "Résolution de dossiers problématiques ou manquants d'informations",
+          ],
+        },
+      ]
+    : [
+        {
+          role: "MLOps Developer Analyst (intern)",
+          company: "Beneva",
+          bullets: [
+            "Collaboration on projects improving technologies, AI models and development tools",
+            "Support for the performance of team software and the evolution of the MLOps ecosystem",
+            "Implementation of the technical architecture to operationalize AI solutions",
+            "Hands-on with Terraform, Anaconda Enterprise, AWS SageMaker and MLFlow",
+          ],
+        },
+        {
+          role: "Technology Analyst (student)",
+          company: "Beneva",
+          bullets: [
+            "Coordination between development teams and business partners",
+            "Documentation of architecture processes and configuration guides",
+            "Identification of technical risks and technology watch",
+          ],
+        },
+        {
+          role: "IT Service Center Support",
+          company: "Beneva",
+          bullets: [
+            "Installation and maintenance of software on workstations",
+            "Identity and access management (Azure Entra ID, SCCM, Active Directory)",
+            "Maintained CMDB (Jira) and performed equipment inventories",
+          ],
+        },
+        {
+          role: "Office Agent",
+          company: "Beneva",
+          bullets: [
+            "Assisted clients with the billing of their insurance policies",
+            "Obtained the personal property & casualty insurance agent title",
+          ],
+        },
+        {
+          role: "Telephone Interviewer",
+          company: "Statistics Canada",
+          bullets: [
+            "Assisted Canadian citizens in completing their census forms",
+            "Resolved problematic or incomplete files",
+          ],
+        },
+      ];
+
   return (
     <section>
       <a href={socialLinks.linkedin} target="_blank">
@@ -17,59 +156,80 @@ export default function Page() {
       </a>
 
       <h1 className="mb-8 text-2xl font-medium tracking-tight">
-        Bienvenue sur mon portfolio!
+        {t("homeWelcome")}
       </h1>
 
       <div className="prose prose-neutral dark:prose-invert">
-        <p>
-          Étudiant en Génie Logiciel à l'Université Laval, passionné par le développement 
-          web et les nouvelles technologies.
-        </p>
-        
-        <h2>Compétences techniques</h2>
+        <p>{t("homeIntro")}</p>
+
+        <div className="mb-6">
+          <a
+            href={resumeUrl}
+            download
+            className="inline-flex items-center gap-2 rounded-lg bg-neutral-900 dark:bg-neutral-100 text-white dark:text-neutral-900 px-4 py-2 text-sm font-medium no-underline hover:opacity-90 transition-opacity"
+          >
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"
+              />
+            </svg>
+            {t("homeResume")}
+          </a>
+        </div>
+
+        <h2>{t("homeSkills")}</h2>
         <ul>
-          <li><strong>Langages :</strong> Python, C++, JavaScript, CSS, HTML</li>
-          <li><strong>Outils :</strong> VS Code, Git, Docker</li>
-          <li><strong>Langues :</strong> Français (maternel), Anglais (avancé), Espagnol (débutant)</li>
+          <li>
+            <strong>{t("homeSkillsLanguages")} :</strong> {skills.languages}
+          </li>
+          <li>
+            <strong>{t("homeSkillsTools")} :</strong> {skills.tools}
+          </li>
+          <li>
+            <strong>{t("homeSkillsSpoken")} :</strong> {skills.spoken}
+          </li>
         </ul>
 
-        <h2>Projets récents</h2>
+        <h2>{t("homeProjects")}</h2>
         <ul>
-          <li>
-            <strong>IA conversationnelle (Début)</strong>: Agent conversationnel instantané
-            bâti sur Google Multimodal Live API et DialogFlow CX
-            capable de répondre à des questions en matière d'assurance de dommages aux particuliers, réalisé en Python
-          </li>
-          <li>
-            <strong>Plugin web (2023)</strong>: Extension de navigateur pour comparer 
-            les prix des jeux vidéo à travers différentes plateformes, réalisé en JavaScript
-          </li>
-          <li>
-            <strong>Projet de design IoT (2023)</strong>: Conception d'un système de détection 
-            de lemmings - Note finale: 92%
-          </li>
+          {projects.map((p) => (
+            <li key={p.name}>
+              <strong>{p.name}</strong> — {p.desc}
+            </li>
+          ))}
         </ul>
 
-        <h2>Expérience professionnelle</h2>
-        <p>
-          Actuellement en stage dans l'équipe <strong>MLOps</strong>, je collabore à l'amélioration des <strong>technologies</strong>, 
-          des <strong>modèles d’intelligence artificielle</strong>, des langages, des logiciels et des outils de développement. 
-          Je veille au bon fonctionnement et à la performance de l’écosystème <strong>MLOps</strong>, et j'assure la mise en œuvre de 
-          l’architecture technologique nécessaire pour les solutions d’<strong>intelligence artificielle</strong>. 
-          Ce stage me permet de développer des compétences avec <strong>Terraform</strong>, <strong>Anaconda Entreprise</strong>, 
-          <strong>AWS Sagemaker</strong>, <strong>MLFlow</strong> et <strong>Python/R/SQL</strong>.
-        </p>
-        <p>
-          Auparavant, j'étais <strong>Soutien au centre de services TI</strong> chez Beneva, 
-          où je gérais l'<strong>infrastructure IT</strong>, la <strong>CMDB</strong> et les <strong>accès utilisateurs</strong> via 
-          <strong>Azure Entra ID</strong> et <strong>Active Directory</strong>.
-        </p>
+        <h2>{t("homeExperience")}</h2>
+        {experience.map((exp) => (
+          <div key={exp.role} className="mb-4">
+            <h3 className="mb-1">
+              {exp.role} ·{" "}
+              <span className="text-neutral-500">{exp.company}</span>
+            </h3>
+            <ul>
+              {exp.bullets.map((b) => (
+                <li key={b}>{b}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
         <p>
-          Contactez-moi via{" "}
-          <a href="mailto:maben221@ulaval.ca">maben221@ulaval.ca</a> ou{" "}
-          <a href={socialLinks.linkedin} target="_blank">LinkedIn</a> pour discuter 
-          d'opportunités de collaboration.
+          {t("homeContact")}{" "}
+          <a href="mailto:maben221@ulaval.ca">maben221@ulaval.ca</a>{" "}
+          {t("homeContactOr")}{" "}
+          <a href={socialLinks.linkedin} target="_blank">
+            LinkedIn
+          </a>{" "}
+          {t("homeContactDiscuss")}
         </p>
       </div>
     </section>

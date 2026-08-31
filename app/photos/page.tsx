@@ -1,16 +1,15 @@
-import React from "react";
-import type { Metadata } from "next";
-import { ImageGrid } from "app/components/image-grid";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Photos",
-  description: "My Photos",
-};
+import React from "react";
+import { ImageGrid } from "app/components/image-grid";
+import { useI18n } from "../lib/i18n";
 
 export default function Photos() {
+  const { t } = useI18n();
+
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Photos</h1>
+      <h1 className="mb-8 text-2xl font-medium tracking-tight">{t("photosTitle")}</h1>
       <ImageGrid
         columns={3}
         images={[

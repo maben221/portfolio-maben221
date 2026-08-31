@@ -1,16 +1,17 @@
-import React from "react";
-import type { Metadata } from "next";
-import { projects } from "./project-data";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description: "My Projects",
-};
+import React from "react";
+import { projects } from "./project-data";
+import { useI18n } from "../lib/i18n";
 
 export default function Projects() {
+  const { t } = useI18n();
+
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-medium tracking-tight">Projects</h1>
+      <h1 className="mb-8 text-2xl font-medium tracking-tight">
+        {t("projectsTitle")}
+      </h1>
       <div className="space-y-6">
         {projects.map((project, index) => (
           <a
